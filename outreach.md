@@ -1,4 +1,82 @@
-# PDFReady — Ready-to-Send Outreach Emails
+# PDFReady — Revenue Playbook
+
+Three paths to $100. Do them in parallel.
+
+---
+
+## Path 1 — Fiverr Gig (fastest inbound)
+
+Create a gig at fiverr.com/selling. Copy-paste everything below.
+Fiverr has active buyers searching "pdf accessibility" and "pdf remediation" right now.
+One sale of the Standard package = $75 gross ($60 after 20% Fiverr fee).
+Two Standard sales or one Premium = $100+.
+
+### Gig Title (use exactly)
+`I will remediate your PDF to WCAG 2.1 AA and PDF/UA-1 with veraPDF proof`
+
+### Category
+Writing & Translation → Other
+
+### Gig Description (copy-paste)
+
+```
+Are your PDFs ADA compliant? Do they pass veraPDF?
+
+I remediate PDF documents to PDF/UA-1 and WCAG 2.1 AA — the standards required for ADA Title II, Section 508, and WCAG compliance. Every document I return includes a **passing veraPDF validation report** — machine-verifiable proof that holds up in any audit, OCR investigation, or legal review.
+
+**What veraPDF proof means:** veraPDF is the industry-standard PDF/UA-1 validator developed by the PDF Association. A passing report means your document is objectively, provably compliant — not just "looks accessible," but machine-verified.
+
+**What I fix:**
+✅ Document structure tree and reading order
+✅ Heading hierarchy (H1 → H2 → H3)
+✅ Alt text for all images, charts, and figures
+✅ Tables (headers, scope, summaries)
+✅ Font encoding and Unicode mappings
+✅ XMP metadata (PDF/UA-1 identifier, document language)
+✅ Links and form fields
+✅ Color contrast verification
+✅ Passing veraPDF report included with every delivery
+
+**Who this is for:**
+- Universities and colleges with ADA Title II compliance deadlines
+- State and local government agencies
+- Businesses needing Section 508 compliance
+- Anyone whose PDF has been flagged in an accessibility audit
+
+**Turnaround:** 48 hours standard · 24 hours rush (select Express Delivery)
+
+Message me if you have questions about your specific documents.
+```
+
+### Packages
+
+| | Basic | Standard | Premium |
+|---|---|---|---|
+| **Name** | Single Document | Small Batch | Compliance Bundle |
+| **Price** | $35 | $75 | $150 |
+| **Pages** | Up to 10 standard pages | Up to 25 standard pages | Up to 60 standard pages |
+| **Delivery** | 2 days | 3 days | 5 days |
+| **veraPDF report** | ✓ | ✓ | ✓ |
+| **Revisions** | 1 | 2 | Unlimited |
+
+For complex PDFs (scanned, multi-column, heavy tables), add $4/page as a custom offer.
+
+### Tags to add
+`pdf accessibility` · `pdf remediation` · `wcag` · `ada compliance` · `section 508` · `pdf ua` · `verapdf` · `accessible pdf` · `wcag 2.1`
+
+### FAQ to add
+**Q: What is veraPDF and why does it matter?**
+A: veraPDF is the open-source PDF/UA validator developed by the PDF Association — it's the gold standard for proving PDF/UA-1 conformance. A passing report is defensible evidence in an ADA complaint or OCR investigation.
+
+**Q: What file formats do you accept?**
+A: Send me the original PDF. If you have the source file (Word, InDesign, etc.), include it — it can speed up the process significantly.
+
+**Q: Can you handle scanned PDFs?**
+A: Yes, but they require OCR processing and count as "complex." Message me before ordering and I'll quote accordingly.
+
+---
+
+## Path 2 — Cold Email Outreach (highest conversion)
 
 Send these today. Each is personalized to a real institution with a real compliance need.
 Replace `[YOUR NAME]` before sending. Subject lines are optimized for open rate.
@@ -126,9 +204,55 @@ If you're the wrong person for this, a quick redirect would be much appreciated.
 
 ---
 
-## Where else to post
+---
 
-- **Reddit:** r/accessibility, r/disability, r/highereducation — describe the service, link to site
-- **LinkedIn:** Post about the ADA 2027 deadline with a link to the site
-- **Upwork:** Create a service listing at upwork.com/services — buyers actively search for PDF accessibility
-- **Fiverr:** Create a gig at fiverr.com/selling — search "pdf remediation" to see top gigs for reference pricing
+## Path 3 — LinkedIn Post (passive traffic)
+
+Post this today. The ADA 2027 deadline is an active topic in higher-ed and government IT circles.
+Target: tag 2-3 accessibility colleagues or repost into relevant groups.
+
+### Post copy
+
+```
+The ADA Title II digital accessibility deadline for public universities and government agencies
+is April 26, 2027 — 341 days away.
+
+Most organizations have hundreds of PDFs that will fail a veraPDF audit.
+The backlog doesn't clear itself.
+
+We offer PDF remediation to PDF/UA-1 + WCAG 2.1 AA, with a passing veraPDF report
+included with every document — machine-verifiable proof for any auditor.
+
+$4/page standard · $8/page complex · 48-hour turnaround
+First PDF free to evaluate quality.
+
+→ https://dansvillewilliamston.github.io/pdfready-site
+
+#PDFAccessibility #ADACompliance #WCAG #DigitalAccessibility #HigherEd #TitleII
+```
+
+---
+
+## PayPal Setup (do this before sharing the site)
+
+The "Pay Now" buttons on the site point to dmw342@gmail.com via PayPal.
+This works only if that email has a PayPal account. Quick check:
+
+1. Go to paypal.com and log in (or create a free account)
+2. Confirm your email dmw342@gmail.com is verified in your account
+3. Test by clicking one of the payment buttons on the site — it should load a PayPal checkout page
+4. If you want a cleaner link, set up paypal.me in your PayPal account (takes 2 min) and replace the button URLs with `https://www.paypal.me/YOURUSERNAME/100USD`
+
+If you prefer Stripe instead: create a free Stripe account → Payment Links → create $40/$80/$100 products → replace the PayPal URLs in index.html with the Stripe links.
+
+---
+
+## GitHub Pages Setup (do this to make the site live)
+
+1. Go to https://github.com/Dansvillewilliamston/pdfready-site/settings/pages
+2. Under "Source", select **Deploy from a branch**
+3. Select branch: **main** · folder: **/ (root)**
+4. Click Save
+5. Your site will be live at: **https://dansvillewilliamston.github.io/pdfready-site**
+   (takes 1–3 minutes to deploy)
+
