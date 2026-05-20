@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PDFReady — ADA-Compliant PDF Remediation with veraPDF Proof</title>
-  <meta name="description" content="AI-powered PDF remediation to PDF/UA-1 and WCAG 2.1 AA. Every job ships with a passing veraPDF validation report. ADA Title II deadline has passed — get compliant now." />
+  <meta name="description" content="AI-powered PDF remediation to PDF/UA-1 and WCAG 2.1 AA. Every job ships with a passing veraPDF validation report. ADA Title II deadline: April 26, 2027 for large entities." />
   <style>
     /* ── Reset & Base ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -15,9 +15,9 @@
       --blue-lt: #3b8eea;
       --orange:  #f97316;
       --orange2: #ea6b05;
-      --red:     #dc2626;
-      --red-lt:  #fef2f2;
-      --red-border: #fecaca;
+      --amber:   #d97706;
+      --amber-lt:#fffbeb;
+      --amber-border:#fde68a;
       --white:   #ffffff;
       --gray-50: #f8fafc;
       --gray-100:#f1f5f9;
@@ -62,17 +62,18 @@
     .text-center { text-align: center; }
     .text-center .section-sub { margin-left: auto; margin-right: auto; }
 
-    /* ── Violation Banner ── */
-    .violation-banner {
-      background: var(--red);
-      color: var(--white);
+    /* ── Deadline Banner ── */
+    .deadline-banner {
+      background: var(--navy2);
+      color: rgba(255,255,255,.9);
       text-align: center;
-      padding: 12px 24px;
-      font-size: .9rem;
-      font-weight: 600;
-      letter-spacing: .01em;
+      padding: 10px 24px;
+      font-size: .875rem;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(249,115,22,.3);
     }
-    .violation-banner a { color: var(--white); text-decoration: underline; font-weight: 700; }
+    .deadline-banner strong { color: var(--orange); }
+    .deadline-banner a { color: var(--orange); font-weight: 700; }
 
     /* ── Nav ── */
     nav {
@@ -150,8 +151,6 @@
     .btn-outline:hover { border-color: var(--white); color: var(--white); }
     .btn-blue { background: var(--blue); color: var(--white); }
     .btn-blue:hover { background: var(--blue-lt); color: var(--white); }
-    .btn-red { background: var(--red); color: var(--white); }
-    .btn-red:hover { background: #b91c1c; color: var(--white); }
     .hero-badges {
       margin-top: 52px;
       display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;
@@ -187,13 +186,13 @@
       box-shadow: var(--shadow);
     }
     .stat-card.stat-card--alert {
-      border-color: var(--red-border); background: var(--red-lt);
+      border-color: var(--amber-border); background: var(--amber-lt);
     }
     .stat-num {
       font-size: 2.8rem; font-weight: 900; color: var(--orange); line-height: 1;
       margin-bottom: 8px;
     }
-    .stat-card--alert .stat-num { color: var(--red); }
+    .stat-card--alert .stat-num { color: var(--amber); }
     .stat-label { font-size: 1rem; color: var(--gray-600); line-height: 1.5; }
     .consequence-list {
       margin-top: 40px; display: flex; flex-direction: column; gap: 12px;
@@ -399,10 +398,10 @@
 </head>
 <body>
 
-<!-- Deadline passed violation banner -->
-<div class="violation-banner">
-  ⚠️ The ADA Title II compliance deadline passed on April 24, 2026. Organizations without compliant PDFs are now in violation.
-  <a href="#quick-order">Fix it today →</a>
+<!-- Upcoming deadline reminder banner -->
+<div class="deadline-banner">
+  ADA Title II deadline: <strong>April 26, 2027</strong> for entities serving 50,000+ · <strong>April 26, 2028</strong> for smaller entities.
+  <a href="#quick-order">Start clearing your backlog →</a>
 </div>
 
 <!-- ═══════════════════════════════════════════════
@@ -434,19 +433,19 @@
 <section class="hero">
   <div class="deadline-chip">
     <span class="dot"></span>
-    Deadline Passed — <span id="days-overdue">26</span> Days of Non-Compliance
+    ADA Title II Deadline: <span id="countdown-display">341 Days Away</span>
   </div>
 
-  <h1>The ADA Deadline Passed.<br><em>Your PDFs Still Need to Pass veraPDF.</em></h1>
+  <h1>Your PDFs Need to Pass <em>veraPDF.</em><br>We Make That Happen.</h1>
 
   <p class="hero-sub">
-    The ADA Title II compliance deadline was April 24, 2026.
-    Organizations that haven't remediated their PDFs are now in violation and exposed to complaints today.
-    We get you compliant fast — with a <strong style="color:#fff">passing veraPDF report</strong> to prove it.
+    AI-powered remediation to PDF/UA-1 + WCAG 2.1 AA compliance.
+    Every job ships with a <strong style="color:#fff">passing veraPDF validation report</strong> — proof you can hand to any auditor.
+    ADA Title II deadline: April 26, 2027 for large entities.
   </p>
 
   <div class="hero-actions">
-    <a href="#quick-order" class="btn btn-red">
+    <a href="#quick-order" class="btn btn-primary">
       ✦ Fix My PDFs Now
     </a>
     <a href="#free-sample" class="btn btn-outline">
@@ -503,10 +502,11 @@
 <section class="section section--alt" id="problem">
   <div class="container">
     <p class="section-label">The Problem</p>
-    <h2 class="section-title">The Deadline Passed. Non-Compliance Is No Longer a Warning.</h2>
+    <h2 class="section-title">95% of PDFs Fail Accessibility Audits.<br>Yours Probably Do Too.</h2>
     <p class="section-sub">
       A 2024 study found that 95.7% of publicly available PDFs contain accessibility failures.
-      Under ADA Title II, public entities must fix them — the deadline was April 24, 2026. For organizations that missed it, the window for proactive compliance is over. Complaints and OCR investigations are now the reality.
+      Under ADA Title II, public entities must fix them. The deadline for large entities (50,000+ population) is
+      <strong>April 26, 2027</strong> — and the PDF backlog at most organizations runs into the hundreds of documents.
     </p>
 
     <div class="stat-grid">
@@ -515,31 +515,31 @@
         <div class="stat-label">of PDFs contain at least one accessibility barrier</div>
       </div>
       <div class="stat-card stat-card--alert">
-        <div class="stat-num">Apr 24</div>
-        <div class="stat-label">The ADA Title II compliance deadline — now <strong id="days-overdue-stat">26</strong> days in the past</div>
+        <div class="stat-num"><span id="days-remaining-stat">341</span></div>
+        <div class="stat-label">Days until the April 26, 2027 deadline for entities serving 50,000+ people</div>
       </div>
       <div class="stat-card">
         <div class="stat-num">$0</div>
-        <div class="stat-label">required to file an ADA complaint — anyone can do it, right now</div>
+        <div class="stat-label">required to file an ADA complaint — any member of the public can do it</div>
       </div>
       <div class="stat-card stat-card--alert">
-        <div class="stat-num">Today</div>
-        <div class="stat-label">Non-compliant organizations are actively exposed to formal complaints and OCR investigations</div>
+        <div class="stat-num">Apr 2028</div>
+        <div class="stat-label">Deadline for smaller entities (under 50,000 population) and special district governments</div>
       </div>
     </div>
 
     <div class="consequence-list" style="max-width:720px;margin-top:40px;">
       <div class="consequence-item">
         <span class="icon">⚖️</span>
-        <p><strong>Legal exposure — now:</strong> With the deadline passed, federal agencies and covered entities that haven't remediated face real risk of OCR investigations and civil rights complaints starting today.</p>
+        <p><strong>Legal exposure:</strong> Federal agencies and covered entities that fail to make digital content accessible by the deadline face OCR investigations and civil rights complaints. The cost of remediation is a fraction of the cost of a complaint.</p>
       </div>
       <div class="consequence-item">
         <span class="icon">🎓</span>
-        <p><strong>Universities &amp; schools:</strong> Course materials, forms, and policy documents are all in scope. Inaccessible PDFs mean students with disabilities can't participate equally — and every day without a fix extends liability.</p>
+        <p><strong>Universities &amp; schools:</strong> Course materials, forms, and policy documents are all in scope. Inaccessible PDFs mean students with disabilities can't participate equally. With hundreds of documents per institution, starting early matters.</p>
       </div>
       <div class="consequence-item">
         <span class="icon">🏛️</span>
-        <p><strong>Government agencies:</strong> Every publicly posted PDF — applications, reports, notices — is in scope. The remediation backlog doesn't shrink by itself. The sooner you start, the less exposure you carry.</p>
+        <p><strong>Government agencies:</strong> Every publicly posted PDF — applications, reports, notices — needs to meet the standard. The backlog is real and it takes time. Organizations that start now finish before the deadline crunch.</p>
       </div>
     </div>
   </div>
@@ -609,9 +609,10 @@
     <p class="section-label">Pay Now &amp; Start Today</p>
     <h2 class="section-title">Pick a Package. Pay by Card. We Handle the Rest.</h2>
     <p class="section-sub">
-      Skip the back-and-forth. Choose a preset package, pay instantly by card,
+      Skip the back-and-forth. Choose a preset package, pay via PayPal,
       then email your PDFs to <a href="mailto:dmw342@gmail.com" style="color:var(--orange)">dmw342@gmail.com</a>.
-      Remediated files and your veraPDF reports come back within 48 hours.
+      Remediated files and veraPDF reports come back within 48 hours.
+      No PayPal account needed — pay by card as a guest.
     </p>
 
     <div class="pricing-grid">
@@ -628,8 +629,7 @@
           <li><span class="chk">✓</span> veraPDF passing report</li>
           <li><span class="chk">✓</span> PDF/UA-1 + WCAG 2.1 AA</li>
         </ul>
-        <!-- Replace STRIPE_LINK_STARTER with your Stripe Payment Link URL -->
-        <a href="STRIPE_LINK_STARTER" class="btn btn-blue" target="_blank" rel="noopener">Pay $40 by Card →</a>
+        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=dmw342%40gmail.com&item_name=PDFReady+Starter+Pack+(10+Standard+Pages)&amount=40.00&currency_code=USD&no_shipping=1&no_note=1" class="btn btn-blue" target="_blank" rel="noopener">Pay $40 via PayPal →</a>
       </div>
 
       <!-- Compliance Pack (featured) -->
@@ -645,8 +645,7 @@
           <li><span class="chk">✓</span> PDF/UA-1 + WCAG 2.1 AA</li>
           <li><span class="chk">✓</span> Priority email support</li>
         </ul>
-        <!-- Replace STRIPE_LINK_COMPLIANCE with your Stripe Payment Link URL -->
-        <a href="STRIPE_LINK_COMPLIANCE" class="btn btn-primary" target="_blank" rel="noopener">Pay $100 by Card →</a>
+        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=dmw342%40gmail.com&item_name=PDFReady+Compliance+Pack+(25+Standard+Pages)&amount=100.00&currency_code=USD&no_shipping=1&no_note=1" class="btn btn-primary" target="_blank" rel="noopener">Pay $100 via PayPal →</a>
       </div>
 
       <!-- Complex Pack -->
@@ -661,8 +660,7 @@
           <li><span class="chk">✓</span> veraPDF passing report</li>
           <li><span class="chk">✓</span> PDF/UA-1 + WCAG 2.1 AA</li>
         </ul>
-        <!-- Replace STRIPE_LINK_COMPLEX with your Stripe Payment Link URL -->
-        <a href="STRIPE_LINK_COMPLEX" class="btn btn-blue" target="_blank" rel="noopener">Pay $80 by Card →</a>
+        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=dmw342%40gmail.com&item_name=PDFReady+Complex+Pack+(10+Complex+Pages)&amount=80.00&currency_code=USD&no_shipping=1&no_note=1" class="btn btn-blue" target="_blank" rel="noopener">Pay $80 via PayPal →</a>
       </div>
 
     </div>
@@ -739,7 +737,7 @@
     </div>
 
     <div class="rush-note">
-      <strong>Already past the deadline?</strong> Rush orders get you covered fastest.
+      <strong>Deadline crunch?</strong> Rush orders are available year-round.
       Standard: <strong>$6/page</strong> · Complex: <strong>$12/page</strong> — 24-hour turnaround guaranteed.
       <a href="#contact" style="color:var(--orange);font-weight:700;margin-left:6px;">Contact us today →</a>
     </div>
@@ -948,14 +946,16 @@
 </footer>
 
 <script>
-  // Live days-overdue counter
+  // Live countdown to April 26, 2027 (large-entity deadline)
   (function() {
-    var deadline = new Date('2026-04-24T00:00:00-07:00');
+    var deadline = new Date('2027-04-26T00:00:00-07:00');
     var now = new Date();
-    var diff = now - deadline;
-    var days = Math.max(0, Math.floor(diff / (1000 * 60 * 60 * 24)));
-    var els = document.querySelectorAll('#days-overdue, #days-overdue-stat');
-    els.forEach(function(el) { el.textContent = days; });
+    var diff = deadline - now;
+    var days = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+    var chipEl = document.getElementById('countdown-display');
+    if (chipEl) chipEl.textContent = days + ' Days Until Deadline';
+    var statEl = document.getElementById('days-remaining-stat');
+    if (statEl) statEl.textContent = days;
   })();
 
   // Sync hidden _replyto field with email input for Formspree
