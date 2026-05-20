@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PDFReady — ADA-Compliant PDF Remediation with veraPDF Proof</title>
-  <meta name="description" content="AI-powered PDF remediation to PDF/UA-1 and WCAG 2.1 AA. Every job ships with a passing veraPDF validation report. ADA Title II deadline: April 24, 2026." />
+  <meta name="description" content="AI-powered PDF remediation to PDF/UA-1 and WCAG 2.1 AA. Every job ships with a passing veraPDF validation report. ADA Title II deadline: April 26, 2027 for large entities." />
   <style>
     /* ── Reset & Base ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -15,6 +15,9 @@
       --blue-lt: #3b8eea;
       --orange:  #f97316;
       --orange2: #ea6b05;
+      --amber:   #d97706;
+      --amber-lt:#fffbeb;
+      --amber-border:#fde68a;
       --white:   #ffffff;
       --gray-50: #f8fafc;
       --gray-100:#f1f5f9;
@@ -59,6 +62,19 @@
     .text-center { text-align: center; }
     .text-center .section-sub { margin-left: auto; margin-right: auto; }
 
+    /* ── Deadline Banner ── */
+    .deadline-banner {
+      background: var(--navy2);
+      color: rgba(255,255,255,.9);
+      text-align: center;
+      padding: 10px 24px;
+      font-size: .875rem;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(249,115,22,.3);
+    }
+    .deadline-banner strong { color: var(--orange); }
+    .deadline-banner a { color: var(--orange); font-weight: 700; }
+
     /* ── Nav ── */
     nav {
       position: sticky; top: 0; z-index: 100;
@@ -96,14 +112,14 @@
       padding: 100px 24px 80px;
       text-align: center;
     }
-    .countdown-chip {
+    .deadline-chip {
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(249,115,22,.15); border: 1px solid rgba(249,115,22,.4);
       color: var(--orange); border-radius: 999px;
       padding: 6px 16px; font-size: .8rem; font-weight: 700;
       letter-spacing: .04em; text-transform: uppercase; margin-bottom: 24px;
     }
-    .countdown-chip .dot {
+    .deadline-chip .dot {
       width: 8px; height: 8px; background: var(--orange); border-radius: 50%;
       animation: pulse 1.6s infinite;
     }
@@ -169,10 +185,14 @@
       border-radius: var(--radius); padding: 32px 24px;
       box-shadow: var(--shadow);
     }
+    .stat-card.stat-card--alert {
+      border-color: var(--amber-border); background: var(--amber-lt);
+    }
     .stat-num {
       font-size: 2.8rem; font-weight: 900; color: var(--orange); line-height: 1;
       margin-bottom: 8px;
     }
+    .stat-card--alert .stat-num { color: var(--amber); }
     .stat-label { font-size: 1rem; color: var(--gray-600); line-height: 1.5; }
     .consequence-list {
       margin-top: 40px; display: flex; flex-direction: column; gap: 12px;
@@ -255,6 +275,13 @@
       color: var(--gray-600); font-size: .9rem;
     }
     .rush-note strong { color: var(--orange); }
+
+    /* ── Quick Order ── */
+    .quick-order-note {
+      margin-top: 28px; color: rgba(255,255,255,.5); font-size: .875rem; line-height: 1.7;
+    }
+    .quick-order-note a { color: var(--orange); text-decoration: none; font-weight: 600; }
+    .quick-order-note a:hover { text-decoration: underline; }
 
     /* ── How It Works ── */
     .steps {
@@ -341,6 +368,13 @@
     .form-group textarea { min-height: 120px; resize: vertical; }
     .form-note { font-size: .8rem; color: var(--gray-400); margin-top: 4px; }
     .form-submit { margin-top: 8px; width: 100%; justify-content: center; font-size: 1rem; padding: 14px; }
+    .form-success {
+      display: none; text-align: center; padding: 32px;
+      background: #f0fdf4; border: 1px solid #86efac; border-radius: 12px;
+      margin-top: 20px;
+    }
+    .form-success h3 { color: var(--green); font-size: 1.25rem; margin-bottom: 8px; }
+    .form-success p { color: var(--gray-600); font-size: .95rem; }
 
     /* ── Footer ── */
     footer {
@@ -364,9 +398,13 @@
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════
-     NAV
-═══════════════════════════════════════════════ -->
+<!-- Upcoming deadline reminder banner -->
+<div class="deadline-banner">
+  ADA Title II deadline: <strong>April 26, 2027</strong> for entities serving 50,000+ &middot; <strong>April 26, 2028</strong> for smaller entities.
+  <a href="#quick-order">Start clearing your backlog &rarr;</a>
+</div>
+
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <div class="nav-logo">
@@ -379,36 +417,35 @@
     </div>
     <ul class="nav-links">
       <li><a href="#problem">The Problem</a></li>
-      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#quick-order">Pricing &amp; Pay</a></li>
       <li><a href="#how-it-works">How It Works</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#free-sample" class="nav-cta">Free Sample</a>
+    <a href="#quick-order" class="nav-cta">Fix My PDFs</a>
   </div>
 </nav>
 
-<!-- ═══════════════════════════════════════════════
-     HERO
-═══════════════════════════════════════════════ -->
+<!-- HERO -->
 <section class="hero">
-  <div class="countdown-chip">
+  <div class="deadline-chip">
     <span class="dot"></span>
-    ADA Title II Deadline: April 24, 2026 — 22 Days Away
+    ADA Title II Deadline: <span id="countdown-display">341 Days Away</span>
   </div>
 
   <h1>Your PDFs Need to Pass <em>veraPDF.</em><br>We Make That Happen.</h1>
 
   <p class="hero-sub">
     AI-powered remediation to PDF/UA-1 + WCAG 2.1 AA compliance.
-    Every job ships with a <strong style="color:#fff">passing veraPDF validation report</strong> — proof you can hand to any auditor.
+    Every job ships with a <strong style="color:#fff">passing veraPDF validation report</strong> &mdash; proof you can hand to any auditor.
+    ADA Title II deadline: April 26, 2027 for large entities.
   </p>
 
   <div class="hero-actions">
-    <a href="#free-sample" class="btn btn-primary">
-      ✦ Get 1 PDF Fixed Free
+    <a href="#quick-order" class="btn btn-primary">
+      &#10022; Fix My PDFs Now
     </a>
-    <a href="#pricing" class="btn btn-outline">
-      View Pricing
+    <a href="#free-sample" class="btn btn-outline">
+      Get 1 PDF Free First
     </a>
   </div>
 
@@ -420,7 +457,7 @@
     </span>
     <div>
       <div style="font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#86efac;margin-bottom:2px;">Certified Output</div>
-      veraPDF Validated · PDF/UA-1 · WCAG 2.1 AA
+      veraPDF Validated &middot; PDF/UA-1 &middot; WCAG 2.1 AA
     </div>
   </div>
 
@@ -430,7 +467,7 @@
         <circle cx="9" cy="9" r="8" stroke="#94a3b8" stroke-width="1.5"/>
         <path d="M9 5v4l2.5 2.5" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
-      24–48 hour turnaround
+      24&ndash;48 hour turnaround
     </div>
     <div class="hero-badge">
       <svg width="18" height="18" fill="none" viewBox="0 0 18 18">
@@ -450,21 +487,20 @@
         <path d="M4 14V9a5 5 0 0110 0v5" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
         <rect x="2" y="11" width="14" height="5" rx="1.5" stroke="#94a3b8" stroke-width="1.5"/>
       </svg>
-      No commitment — first PDF free
+      No commitment &mdash; first PDF free
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     THE PROBLEM
-═══════════════════════════════════════════════ -->
+<!-- THE PROBLEM -->
 <section class="section section--alt" id="problem">
   <div class="container">
     <p class="section-label">The Problem</p>
     <h2 class="section-title">95% of PDFs Fail Accessibility Audits.<br>Yours Probably Do Too.</h2>
     <p class="section-sub">
       A 2024 study found that 95.7% of publicly available PDFs contain accessibility failures.
-      Under ADA Title II, public entities must fix them — or face formal complaints, lawsuits, and OCR investigations.
+      Under ADA Title II, public entities must fix them. The deadline for large entities (50,000+ population) is
+      <strong>April 26, 2027</strong> &mdash; and the PDF backlog at most organizations runs into the hundreds of documents.
     </p>
 
     <div class="stat-grid">
@@ -472,40 +508,38 @@
         <div class="stat-num">95%</div>
         <div class="stat-label">of PDFs contain at least one accessibility barrier</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-num">April 24</div>
-        <div class="stat-label">ADA Title II compliance deadline for state &amp; local government entities</div>
+      <div class="stat-card stat-card--alert">
+        <div class="stat-num"><span id="days-remaining-stat">341</span></div>
+        <div class="stat-label">Days until the April 26, 2027 deadline for entities serving 50,000+ people</div>
       </div>
       <div class="stat-card">
         <div class="stat-num">$0</div>
-        <div class="stat-label">required to file an ADA complaint — anyone can do it</div>
+        <div class="stat-label">required to file an ADA complaint &mdash; any member of the public can do it</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-num">22 days</div>
-        <div class="stat-label">until the deadline. The window to act is closing fast.</div>
+      <div class="stat-card stat-card--alert">
+        <div class="stat-num">Apr 2028</div>
+        <div class="stat-label">Deadline for smaller entities (under 50,000 population) and special district governments</div>
       </div>
     </div>
 
     <div class="consequence-list" style="max-width:720px;margin-top:40px;">
       <div class="consequence-item">
-        <span class="icon">⚖️</span>
-        <p><strong>Legal exposure:</strong> Federal agencies and covered entities that fail to make digital content accessible can face OCR investigations and civil rights complaints.</p>
+        <span class="icon">&#9878;&#65039;</span>
+        <p><strong>Legal exposure:</strong> Federal agencies and covered entities that fail to make digital content accessible by the deadline face OCR investigations and civil rights complaints. The cost of remediation is a fraction of the cost of a complaint.</p>
       </div>
       <div class="consequence-item">
-        <span class="icon">🎓</span>
-        <p><strong>Universities &amp; schools:</strong> Course materials, forms, and policy documents are all in scope. Inaccessible PDFs mean students with disabilities can't participate equally.</p>
+        <span class="icon">&#127979;</span>
+        <p><strong>Universities &amp; schools:</strong> Course materials, forms, and policy documents are all in scope. Inaccessible PDFs mean students with disabilities can't participate equally. With hundreds of documents per institution, starting early matters.</p>
       </div>
       <div class="consequence-item">
-        <span class="icon">🏛️</span>
-        <p><strong>Government agencies:</strong> Every publicly posted PDF — applications, reports, notices — needs to meet the standard. The backlog is real.</p>
+        <span class="icon">&#127963;&#65039;</span>
+        <p><strong>Government agencies:</strong> Every publicly posted PDF &mdash; applications, reports, notices &mdash; needs to meet the standard. The backlog is real and it takes time. Organizations that start now finish before the deadline crunch.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     WHAT WE FIX
-═══════════════════════════════════════════════ -->
+<!-- WHAT WE FIX -->
 <section class="section" id="what-we-fix">
   <div class="container text-center">
     <p class="section-label">What We Fix</p>
@@ -515,227 +549,195 @@
     </p>
 
     <div class="fix-grid">
-      <div class="fix-card">
-        <div class="fix-icon">🖼️</div>
-        <h3>Alt Text &amp; Figures</h3>
-        <p>Every image, chart, and figure gets descriptive, context-appropriate alternative text. Decorative items properly marked as artifacts.</p>
-      </div>
-      <div class="fix-card">
-        <div class="fix-icon">🏗️</div>
-        <h3>Document Structure Tree</h3>
-        <p>Logical reading order, proper heading hierarchy (H1→H2→H3), and tagged content so screen readers navigate correctly.</p>
-      </div>
-      <div class="fix-card">
-        <div class="fix-icon">📊</div>
-        <h3>Tables</h3>
-        <p>Header cells identified, scope attributes set, complex tables given summaries. No more "table soup" that confuses assistive tech.</p>
-      </div>
-      <div class="fix-card">
-        <div class="fix-icon">🔤</div>
-        <h3>Font &amp; Language</h3>
-        <p>Unicode mappings corrected, ToUnicode CMaps embedded, document language declared, character encoding issues resolved.</p>
-      </div>
-      <div class="fix-card">
-        <div class="fix-icon">📋</div>
-        <h3>XMP Metadata Stamp</h3>
-        <p>PDF/UA-1 identifier embedded in XMP metadata, ViewerPreferences set, document title and language properties correctly declared.</p>
-      </div>
-      <div class="fix-card">
-        <div class="fix-icon">🔗</div>
-        <h3>Links &amp; Forms</h3>
-        <p>Hyperlinks tagged with descriptive text, form fields labeled, tab order logical. Interactive PDFs work with keyboard navigation.</p>
-      </div>
-      <div class="fix-card">
-        <div class="fix-icon">🎨</div>
-        <h3>Color Contrast</h3>
-        <p>Text elements checked against WCAG 2.1 AA contrast ratios (4.5:1 normal, 3:1 large text). Issues flagged and remediated.</p>
-      </div>
-      <div class="fix-card">
-        <div class="fix-icon">✅</div>
-        <h3>veraPDF Report</h3>
-        <p>Every remediated PDF ships with a passing veraPDF validation report. Green light. Audit-ready. No exceptions.</p>
-      </div>
+      <div class="fix-card"><div class="fix-icon">&#128444;&#65039;</div><h3>Alt Text &amp; Figures</h3><p>Every image, chart, and figure gets descriptive, context-appropriate alternative text. Decorative items properly marked as artifacts.</p></div>
+      <div class="fix-card"><div class="fix-icon">&#127959;&#65039;</div><h3>Document Structure Tree</h3><p>Logical reading order, proper heading hierarchy (H1&rarr;H2&rarr;H3), and tagged content so screen readers navigate correctly.</p></div>
+      <div class="fix-card"><div class="fix-icon">&#128202;</div><h3>Tables</h3><p>Header cells identified, scope attributes set, complex tables given summaries. No more &ldquo;table soup&rdquo; that confuses assistive tech.</p></div>
+      <div class="fix-card"><div class="fix-icon">&#128292;</div><h3>Font &amp; Language</h3><p>Unicode mappings corrected, ToUnicode CMaps embedded, document language declared, character encoding issues resolved.</p></div>
+      <div class="fix-card"><div class="fix-icon">&#128203;</div><h3>XMP Metadata Stamp</h3><p>PDF/UA-1 identifier embedded in XMP metadata, ViewerPreferences set, document title and language properties correctly declared.</p></div>
+      <div class="fix-card"><div class="fix-icon">&#128279;</div><h3>Links &amp; Forms</h3><p>Hyperlinks tagged with descriptive text, form fields labeled, tab order logical. Interactive PDFs work with keyboard navigation.</p></div>
+      <div class="fix-card"><div class="fix-icon">&#127912;</div><h3>Color Contrast</h3><p>Text elements checked against WCAG 2.1 AA contrast ratios (4.5:1 normal, 3:1 large text). Issues flagged and remediated.</p></div>
+      <div class="fix-card"><div class="fix-icon">&#9989;</div><h3>veraPDF Report</h3><p>Every remediated PDF ships with a passing veraPDF validation report. Green light. Audit-ready. No exceptions.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     PRICING
-═══════════════════════════════════════════════ -->
-<section class="section section--alt" id="pricing">
+<!-- PRICING & QUICK ORDER -->
+<section class="section section--dark" id="quick-order">
   <div class="container text-center">
-    <p class="section-label">Pricing</p>
-    <h2 class="section-title">Clear, Predictable Pricing</h2>
+    <p class="section-label">Pay Now &amp; Start Today</p>
+    <h2 class="section-title">Pick a Package. Pay by Card. We Handle the Rest.</h2>
     <p class="section-sub">
-      No surprises. Per-page pricing means you know exactly what you'll pay before we start.
-      Volume discounts available for 500+ page batches — ask us.
+      Skip the back-and-forth. Choose a preset package, pay via PayPal,
+      then email your PDFs to <a href="mailto:dmw342@gmail.com" style="color:var(--orange)">dmw342@gmail.com</a>.
+      Remediated files and veraPDF reports come back within 48 hours.
+      No PayPal account needed &mdash; pay by card as a guest.
     </p>
 
     <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-tier">Starter</div>
+        <div class="price-amount">$40</div>
+        <div class="price-unit">10 Standard pages &middot; 48-hour turnaround</div>
+        <ul class="price-features">
+          <li><span class="chk">&#10003;</span> 10 pages of Standard remediation</li>
+          <li><span class="chk">&#10003;</span> Alt text, structure tree, language</li>
+          <li><span class="chk">&#10003;</span> XMP metadata stamp</li>
+          <li><span class="chk">&#10003;</span> veraPDF passing report</li>
+          <li><span class="chk">&#10003;</span> PDF/UA-1 + WCAG 2.1 AA</li>
+        </ul>
+        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=dmw342%40gmail.com&item_name=PDFReady+Starter+Pack+(10+Standard+Pages)&amount=40.00&currency_code=USD&no_shipping=1&no_note=1" class="btn btn-blue" target="_blank" rel="noopener">Pay $40 via PayPal &rarr;</a>
+      </div>
 
-      <!-- Standard -->
+      <div class="price-card featured">
+        <span class="price-badge">Best Value</span>
+        <div class="price-tier">Compliance Pack</div>
+        <div class="price-amount">$100</div>
+        <div class="price-unit">25 Standard pages &middot; 48-hour turnaround</div>
+        <ul class="price-features">
+          <li><span class="chk">&#10003;</span> 25 pages of Standard remediation</li>
+          <li><span class="chk">&#10003;</span> veraPDF passing report for each file</li>
+          <li><span class="chk">&#10003;</span> 48-hour turnaround</li>
+          <li><span class="chk">&#10003;</span> PDF/UA-1 + WCAG 2.1 AA</li>
+          <li><span class="chk">&#10003;</span> Priority email support</li>
+        </ul>
+        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=dmw342%40gmail.com&item_name=PDFReady+Compliance+Pack+(25+Standard+Pages)&amount=100.00&currency_code=USD&no_shipping=1&no_note=1" class="btn btn-primary" target="_blank" rel="noopener">Pay $100 via PayPal &rarr;</a>
+      </div>
+
+      <div class="price-card">
+        <div class="price-tier">Complex Pack</div>
+        <div class="price-amount">$80</div>
+        <div class="price-unit">10 Complex pages &middot; 48-hour turnaround</div>
+        <ul class="price-features">
+          <li><span class="chk">&#10003;</span> 10 pages of Complex remediation</li>
+          <li><span class="chk">&#10003;</span> Scanned PDFs, tables, multi-column</li>
+          <li><span class="chk">&#10003;</span> OCR + full accessibility remediation</li>
+          <li><span class="chk">&#10003;</span> veraPDF passing report</li>
+          <li><span class="chk">&#10003;</span> PDF/UA-1 + WCAG 2.1 AA</li>
+        </ul>
+        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=dmw342%40gmail.com&item_name=PDFReady+Complex+Pack+(10+Complex+Pages)&amount=80.00&currency_code=USD&no_shipping=1&no_note=1" class="btn btn-blue" target="_blank" rel="noopener">Pay $80 via PayPal &rarr;</a>
+      </div>
+    </div>
+
+    <p class="quick-order-note">
+      After payment, email your PDFs to <a href="mailto:dmw342@gmail.com">dmw342@gmail.com</a> with your payment confirmation.
+      Need more pages or a custom quote? <a href="#contact">Contact us &rarr;</a>
+      &middot; Rush 24-hour turnaround: Standard <strong style="color:var(--white)">$6/page</strong> &middot; Complex <strong style="color:var(--white)">$12/page</strong>
+    </p>
+  </div>
+</section>
+
+<!-- PER-PAGE PRICING -->
+<section class="section section--alt" id="pricing">
+  <div class="container text-center">
+    <p class="section-label">Per-Page Pricing</p>
+    <h2 class="section-title">Need More Pages? Clear, Predictable Rates.</h2>
+    <p class="section-sub">No surprises. Per-page pricing means you know exactly what you'll pay before we start. Volume discounts available for 500+ page batches.</p>
+
+    <div class="pricing-grid">
       <div class="price-card">
         <div class="price-tier">Standard</div>
         <div class="price-amount">$4</div>
-        <div class="price-unit">per page · 48-hour turnaround</div>
+        <div class="price-unit">per page &middot; 48-hour turnaround</div>
         <ul class="price-features">
-          <li><span class="chk">✓</span> Text-based PDFs, reports, forms</li>
-          <li><span class="chk">✓</span> Alt text, structure tree, language</li>
-          <li><span class="chk">✓</span> XMP metadata stamp</li>
-          <li><span class="chk">✓</span> veraPDF passing report</li>
-          <li><span class="chk">✓</span> PDF/UA-1 + WCAG 2.1 AA</li>
+          <li><span class="chk">&#10003;</span> Text-based PDFs, reports, forms</li>
+          <li><span class="chk">&#10003;</span> Alt text, structure tree, language</li>
+          <li><span class="chk">&#10003;</span> XMP metadata stamp</li>
+          <li><span class="chk">&#10003;</span> veraPDF passing report</li>
+          <li><span class="chk">&#10003;</span> PDF/UA-1 + WCAG 2.1 AA</li>
         </ul>
-        <a href="#contact" class="btn btn-blue">Get Started</a>
+        <a href="#contact" class="btn btn-blue">Get a Quote</a>
       </div>
 
-      <!-- Complex (featured) -->
       <div class="price-card featured">
         <span class="price-badge">Most Requested</span>
         <div class="price-tier">Complex</div>
         <div class="price-amount">$8</div>
-        <div class="price-unit">per page · 48-hour turnaround</div>
+        <div class="price-unit">per page &middot; 48-hour turnaround</div>
         <ul class="price-features">
-          <li><span class="chk">✓</span> Scanned PDFs, mixed media, charts</li>
-          <li><span class="chk">✓</span> Complex tables with nested headers</li>
-          <li><span class="chk">✓</span> Multi-column layouts, figures</li>
-          <li><span class="chk">✓</span> Handwritten or low-quality source</li>
-          <li><span class="chk">✓</span> Everything in Standard, plus OCR</li>
-          <li><span class="chk">✓</span> veraPDF passing report</li>
+          <li><span class="chk">&#10003;</span> Scanned PDFs, mixed media, charts</li>
+          <li><span class="chk">&#10003;</span> Complex tables with nested headers</li>
+          <li><span class="chk">&#10003;</span> Multi-column layouts, figures</li>
+          <li><span class="chk">&#10003;</span> Handwritten or low-quality source</li>
+          <li><span class="chk">&#10003;</span> Everything in Standard, plus OCR</li>
+          <li><span class="chk">&#10003;</span> veraPDF passing report</li>
         </ul>
-        <a href="#contact" class="btn btn-primary">Get Started</a>
+        <a href="#contact" class="btn btn-primary">Get a Quote</a>
       </div>
 
-      <!-- Rush -->
       <div class="price-card">
-        <div class="price-tier">Rush</div>
+        <div class="price-tier">Rush (24-hour)</div>
         <div class="price-amount">+50%</div>
-        <div class="price-unit">on top of Standard or Complex · 24-hour</div>
+        <div class="price-unit">on top of Standard or Complex</div>
         <ul class="price-features">
-          <li><span class="chk">✓</span> 24-hour turnaround guaranteed</li>
-          <li><span class="chk">✓</span> Priority queue, dedicated handler</li>
-          <li><span class="chk">✓</span> Same-day updates on progress</li>
-          <li><span class="chk">✓</span> Ideal for compliance deadlines</li>
-          <li><span class="chk">✓</span> veraPDF passing report</li>
+          <li><span class="chk">&#10003;</span> 24-hour turnaround guaranteed</li>
+          <li><span class="chk">&#10003;</span> Priority queue, dedicated handler</li>
+          <li><span class="chk">&#10003;</span> Same-day progress updates</li>
+          <li><span class="chk">&#10003;</span> Ideal for compliance remediation backlogs</li>
+          <li><span class="chk">&#10003;</span> veraPDF passing report</li>
         </ul>
         <a href="#contact" class="btn btn-blue">Request Rush</a>
       </div>
-
     </div>
 
     <div class="rush-note">
-      <strong>Deadline in 22 days?</strong> Rush orders are available now.
-      Standard: <strong>$6/page</strong> · Complex: <strong>$12/page</strong> — with a 24-hour turnaround guarantee.
-      <a href="#contact" style="color:var(--orange);font-weight:700;margin-left:6px;">Contact us today →</a>
+      <strong>Deadline crunch?</strong> Rush orders are available year-round.
+      Standard: <strong>$6/page</strong> &middot; Complex: <strong>$12/page</strong> &mdash; 24-hour turnaround guaranteed.
+      <a href="#contact" style="color:var(--orange);font-weight:700;margin-left:6px;">Contact us today &rarr;</a>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     HOW IT WORKS
-═══════════════════════════════════════════════ -->
+<!-- HOW IT WORKS -->
 <section class="section" id="how-it-works">
   <div class="container text-center">
     <p class="section-label">Process</p>
     <h2 class="section-title">Four Steps to Compliance</h2>
-    <p class="section-sub">
-      Simple, fast, and transparent. You send us a PDF — we send back a remediated file and proof it passes.
-    </p>
-
+    <p class="section-sub">Simple, fast, and transparent. You send us a PDF &mdash; we send back a remediated file and proof it passes.</p>
     <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h3>Send Your PDF</h3>
-        <p>Email it directly, or share a Google Drive / Dropbox link for larger files. We confirm receipt within 1 hour.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h3>We Remediate</h3>
-        <p>Our AI-assisted workflow fixes every accessibility failure: structure, alt text, tables, fonts, metadata.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3>Receive Fixed PDF + Report</h3>
-        <p>You get the remediated PDF and a passing veraPDF validation report — audit-ready documentation.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <h3>You're Compliant</h3>
-        <p>Publish with confidence. The report is proof of due diligence you can present to any auditor or OCR investigator.</p>
-      </div>
+      <div class="step"><div class="step-num">1</div><h3>Pay or Send Your PDF</h3><p>Choose a preset package and pay by card, or email your PDFs directly. We confirm receipt within 1 hour.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>We Remediate</h3><p>Our AI-assisted workflow fixes every accessibility failure: structure, alt text, tables, fonts, metadata.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Receive Fixed PDF + Report</h3><p>You get the remediated PDF and a passing veraPDF validation report &mdash; audit-ready documentation.</p></div>
+      <div class="step"><div class="step-num">4</div><h3>You're Compliant</h3><p>Publish with confidence. The report is proof of due diligence you can present to any auditor or OCR investigator.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     FILE INTAKE
-═══════════════════════════════════════════════ -->
+<!-- FILE INTAKE -->
 <section class="section section--alt" id="file-intake">
   <div class="container">
     <p class="section-label">File Intake</p>
     <h2 class="section-title">How to Send Us Your Files</h2>
-    <p class="section-sub">
-      We've made file submission as frictionless as possible. Choose the method that fits your file size.
-    </p>
-
+    <p class="section-sub">We've made file submission as frictionless as possible. Choose the method that fits your file size.</p>
     <div class="intake-grid">
-      <div class="intake-card">
-        <div class="intake-icon">📧</div>
-        <h3>Small PDFs (&lt;25 MB)</h3>
-        <p>Attach directly to an email and send to <strong>dan@PLACEHOLDER.com</strong>. Include a brief note on page count and any rush requirements.</p>
-      </div>
-      <div class="intake-card">
-        <div class="intake-icon">☁️</div>
-        <h3>Large PDFs (25 MB – 500 MB)</h3>
-        <p>Share a <strong>Google Drive</strong> or <strong>Dropbox</strong> link with view access. Paste the link in your email or the contact form below.</p>
-      </div>
-      <div class="intake-card">
-        <div class="intake-icon">📦</div>
-        <h3>Large Batches (500 MB+)</h3>
-        <p>Contact us and we'll provision a <strong>secure upload folder</strong> just for your project — no guesswork about file limits or sharing permissions.</p>
-      </div>
-      <div class="intake-card">
-        <div class="intake-icon">🔒</div>
-        <h3>Confidential Documents</h3>
-        <p>Need a Non-Disclosure Agreement before sharing? Just ask. We handle sensitive government and institutional documents regularly.</p>
-      </div>
+      <div class="intake-card"><div class="intake-icon">&#128231;</div><h3>Small PDFs (&lt;25 MB)</h3><p>Attach directly to an email and send to <strong><a href="mailto:dmw342@gmail.com">dmw342@gmail.com</a></strong>. Include a brief note on page count and any rush requirements.</p></div>
+      <div class="intake-card"><div class="intake-icon">&#9729;&#65039;</div><h3>Large PDFs (25 MB &ndash; 500 MB)</h3><p>Share a <strong>Google Drive</strong> or <strong>Dropbox</strong> link with view access. Paste the link in your email or the contact form below.</p></div>
+      <div class="intake-card"><div class="intake-icon">&#128230;</div><h3>Large Batches (500 MB+)</h3><p>Contact us and we'll provision a <strong>secure upload folder</strong> just for your project &mdash; no guesswork about file limits.</p></div>
+      <div class="intake-card"><div class="intake-icon">&#128274;</div><h3>Confidential Documents</h3><p>Need a Non-Disclosure Agreement before sharing? Just ask. We handle sensitive government and institutional documents regularly.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     FREE SAMPLE CTA
-═══════════════════════════════════════════════ -->
+<!-- FREE SAMPLE CTA -->
 <section class="cta-section" id="free-sample">
   <div class="container">
-    <h2>Get Your First PDF Fixed — Free.</h2>
-    <p>
-      No payment information. No commitment. Send us one PDF and we'll return a fully remediated file
-      with a passing veraPDF report — so you can see exactly what you're getting before you spend a dollar.
-    </p>
-    <a href="#contact" class="btn btn btn-white" style="font-size:1.1rem;padding:16px 40px;">
-      ✦ Claim Your Free Sample
-    </a>
-    <p class="no-card">No credit card required · One PDF per institution · Results in 48 hours</p>
+    <h2>Not Sure Yet? Get Your First PDF Fixed &mdash; Free.</h2>
+    <p>No payment information. No commitment. Send us one PDF and we'll return a fully remediated file with a passing veraPDF report &mdash; so you can see exactly what you're getting before you spend a dollar.</p>
+    <a href="#contact" class="btn btn-white" style="font-size:1.1rem;padding:16px 40px;">&#10022; Claim Your Free Sample</a>
+    <p class="no-card">No credit card required &middot; One PDF per institution &middot; Results in 48 hours</p>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     CONTACT FORM
-═══════════════════════════════════════════════ -->
+<!-- CONTACT FORM -->
 <section class="section" id="contact">
   <div class="container text-center">
     <p class="section-label">Contact</p>
-    <h2 class="section-title">Start Your Free Sample or Get a Quote</h2>
-    <p class="section-sub">
-      Fill out the form and we'll respond within a few hours.
-      For urgent deadline work, mention it in your message — we prioritize ADA Title II requests.
-    </p>
+    <h2 class="section-title">Start Your Free Sample or Get a Custom Quote</h2>
+    <p class="section-sub">Fill out the form and we'll respond within a few hours. For large batches or custom pricing, mention it in your message.</p>
 
     <div class="form-wrap">
-      <form action="mailto:dan@PLACEHOLDER.com"
-            method="post"
-            enctype="text/plain"
-            onsubmit="return handleFormSubmit(event)">
+      <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+        <input type="hidden" name="_replyto" id="hidden-email" value="" />
+        <input type="hidden" name="_subject" value="PDFReady &mdash; New Inquiry" />
 
         <div class="form-row">
           <div class="form-group">
@@ -757,101 +759,115 @@
           <label for="service">Service Needed</label>
           <select id="service" name="service">
             <option value="free-sample">Free Sample (1 PDF)</option>
-            <option value="standard">Standard — $4/page</option>
-            <option value="complex">Complex — $8/page</option>
-            <option value="rush">Rush (24 hrs) — +50%</option>
-            <option value="quote">Large Batch — Request a Quote</option>
+            <option value="standard">Standard &mdash; $4/page</option>
+            <option value="complex">Complex &mdash; $8/page</option>
+            <option value="rush">Rush (24 hrs) &mdash; +50%</option>
+            <option value="quote">Large Batch &mdash; Request a Quote</option>
           </select>
         </div>
 
         <div class="form-group">
           <label for="message">Tell Us About Your PDFs *</label>
-          <textarea id="message" name="message"
-            placeholder="e.g. We have ~200 pages of scanned course syllabi that need to pass veraPDF by April 24. Mix of text and some tables. Rush service needed."
-            required></textarea>
+          <textarea id="message" name="message" placeholder="e.g. We have ~200 pages of scanned course syllabi that need to pass veraPDF. Mix of text and some tables." required></textarea>
           <p class="form-note">Include: approximate page count, document type, and any deadline requirements.</p>
         </div>
 
         <div class="form-group">
           <label for="file-link">File Link (optional)</label>
           <input type="url" id="file-link" name="file_link" placeholder="https://drive.google.com/..." />
-          <p class="form-note">Google Drive or Dropbox link if you have files ready to share. Or attach in your email reply.</p>
+          <p class="form-note">Google Drive or Dropbox link if you have files ready to share.</p>
         </div>
 
-        <button type="submit" class="btn btn-primary form-submit">
-          Send Request →
-        </button>
+        <button type="submit" class="btn btn-primary form-submit">Send Request &rarr;</button>
       </form>
 
+      <div class="form-success" id="form-success">
+        <h3>&#10003; Message Received!</h3>
+        <p>We'll be in touch within a few hours.<br>Or email us directly at <a href="mailto:dmw342@gmail.com">dmw342@gmail.com</a>.</p>
+      </div>
+
       <p style="margin-top:20px;font-size:.85rem;color:var(--gray-400);text-align:center;">
-        We typically respond within 2–4 hours during business hours (Pacific Time).
+        Typically respond within 2&ndash;4 hours (Pacific Time). Or email <a href="mailto:dmw342@gmail.com">dmw342@gmail.com</a> directly.
       </p>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     FOOTER
-═══════════════════════════════════════════════ -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">PDF<span>Ready</span></div>
-    <p style="max-width:480px;margin:0 auto;line-height:1.7;">
-      AI-powered PDF remediation to PDF/UA-1 and WCAG 2.1 AA.
-      Every job includes a passing veraPDF validation report.
-    </p>
+    <p style="max-width:480px;margin:0 auto;line-height:1.7;">AI-powered PDF remediation to PDF/UA-1 and WCAG 2.1 AA. Every job includes a passing veraPDF validation report.</p>
     <div class="footer-links">
       <a href="#problem">The Problem</a>
       <a href="#what-we-fix">What We Fix</a>
+      <a href="#quick-order">Pay Now</a>
       <a href="#pricing">Pricing</a>
       <a href="#how-it-works">How It Works</a>
       <a href="#contact">Contact</a>
     </div>
     <div class="footer-copy">
-      <p>© 2026 PDFReady — [Company Name Placeholder]. All rights reserved.</p>
-      <p style="margin-top:6px;">ADA Title II compliance deadline: April 24, 2026.</p>
+      <p>&copy; 2026 PDFReady. All rights reserved.</p>
+      <p style="margin-top:6px;">Questions? <a href="mailto:dmw342@gmail.com" style="color:rgba(255,255,255,.55)">dmw342@gmail.com</a></p>
     </div>
   </div>
 </footer>
 
 <script>
-  // Handle form submit — open mailto with pre-filled subject and body
-  function handleFormSubmit(e) {
-    e.preventDefault();
-    var name        = document.getElementById('name').value;
-    var institution = document.getElementById('institution').value;
-    var email       = document.getElementById('email').value;
-    var service     = document.getElementById('service').value;
-    var message     = document.getElementById('message').value;
-    var fileLink    = document.getElementById('file-link').value;
+  // Countdown to April 26, 2027 (large-entity ADA Title II deadline)
+  (function() {
+    var deadline = new Date('2027-04-26T00:00:00-07:00');
+    var now = new Date();
+    var diff = deadline - now;
+    var days = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+    var chipEl = document.getElementById('countdown-display');
+    if (chipEl) chipEl.textContent = days + ' Days Until Deadline';
+    var statEl = document.getElementById('days-remaining-stat');
+    if (statEl) statEl.textContent = days;
+  })();
 
-    var body = [
-      'Name: ' + name,
-      'Institution: ' + institution,
-      'Reply-to: ' + email,
-      'Service: ' + service,
-      '',
-      'Message:',
-      message,
-      fileLink ? '\nFile Link: ' + fileLink : ''
-    ].join('\n');
-
-    var subject = encodeURIComponent('PDF Accessibility Sample Request');
-    var encodedBody = encodeURIComponent(body);
-
-    window.location.href = 'mailto:dan@PLACEHOLDER.com?subject=' + subject + '&body=' + encodedBody;
-    return false;
+  // Sync _replyto with email input
+  var emailInput = document.getElementById('email');
+  var hiddenEmail = document.getElementById('hidden-email');
+  if (emailInput && hiddenEmail) {
+    emailInput.addEventListener('input', function() { hiddenEmail.value = emailInput.value; });
   }
 
-  // Smooth-scroll offset for sticky nav
+  // Form: Formspree AJAX with mailto fallback
+  var form = document.getElementById('contact-form');
+  var successBox = document.getElementById('form-success');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      if (form.action.indexOf('YOUR_FORMSPREE_ID') !== -1) {
+        e.preventDefault();
+        var body = [
+          'Name: ' + document.getElementById('name').value,
+          'Institution: ' + document.getElementById('institution').value,
+          'Reply-to: ' + document.getElementById('email').value,
+          'Service: ' + document.getElementById('service').value,
+          '', 'Message:', document.getElementById('message').value,
+          document.getElementById('file-link').value ? '\nFile Link: ' + document.getElementById('file-link').value : ''
+        ].join('\n');
+        window.location.href = 'mailto:dmw342@gmail.com?subject=' + encodeURIComponent('PDFReady - New Inquiry') + '&body=' + encodeURIComponent(body);
+        return false;
+      }
+      e.preventDefault();
+      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+        .then(function(r) {
+          if (r.ok) { form.style.display = 'none'; successBox.style.display = 'block'; }
+          else { alert('Something went wrong. Please email dmw342@gmail.com directly.'); }
+        })
+        .catch(function() { alert('Something went wrong. Please email dmw342@gmail.com directly.'); });
+    });
+  }
+
+  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function(e) {
       var target = document.querySelector(this.getAttribute('href'));
       if (target) {
         e.preventDefault();
-        var offset = 70;
-        var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top: top, behavior: 'smooth' });
+        window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 70, behavior: 'smooth' });
       }
     });
   });
